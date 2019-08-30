@@ -18,17 +18,22 @@
 
 	function basetodec(number, base){
 
-		var charset = "0123456789abcdefghijklmnñopqrstwxyz";
+			var dec = "";
 
-            var dec = "";
+            for ( i = number; i < number.length; i++){
 
-            for ( i = number; i < number.length; number++) {
+            		var charset = "0123456789abcdefghijklmnñopqrstwxyz";
+
+					var valor = charset.indexOf(caracter);
+
             	
-                number[number.length - (i + 1)] === base
-                    number += base ** i;
+              		var caracter = number[number.length - (i + 1)];
+
+                   	dec += (base ** i)  * valor;
                 }
 
                 return dec;
-    }
+
+   			}	
 </script>
 </html>
