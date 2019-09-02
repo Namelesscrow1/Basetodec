@@ -50,16 +50,17 @@
 
 	<input type="button" value="Calcular" onclick="resultados()">
 
-	<div id = "resultado1"></div>
+	<div id = "resultado"></div>
 	
 </body>
 
 <script type="text/javascript">
+
 	function resultados(){
 		var base = document.getElementById("base");
 		var number = document.getElementById("number");
-		var resultado = document.getElementById("resultado1");
-		resultado1.innerText = basetodec(number, base);
+		var resultado = document.getElementById("resultado");
+		resultado.innerText = basetodec(number, base);
 		
 	}
 
@@ -73,24 +74,15 @@
 
             		var caracter = number[number.length - (i + 1)];
 
-		    	var valor = charset.indexOf(caracter);
-			
-		    	dec += (base ** i)  * valor;
+
+					var valor = charset.indexOf(caracter);
+
+            	
+              		
+                   	dec += (base ** i)  * valor;
                 }
 
                 return dec;
-
-             	var resultado = "";
-        	while(number > 0) {
-            	var base_mod = number%base;
-            	if (base_mod > 9) {
-                resultado = String.fromCharCode(base_mod + 55 ) + number;
-            	} else {
-                  resultado= base_mod + resultado;
-             	  }
-            		number = Math.floor(number/base);
-        	}
-        		return resultado;
 
    			}	
     				
