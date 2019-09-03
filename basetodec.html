@@ -108,12 +108,12 @@
 
             for ( i = 0; i < number.length; i++){
 
-            		var charset = "0123456789abcdefghijklmnñopqrstwxyz";
+            		var charset = "0123456789abcdefghijklmnopqrstuvwxyz";
 
             		var caracter = number[number.length - (i + 1)];
 
 
-					var valor = charset.indexOf(caracter);
+					var valor = charset.indexOf(caracter.toLowerCase());
 
             	
               		
@@ -129,7 +129,7 @@
         		  while(number1 > 0) {
             		var base_mod = number1%base1;
             		if (base_mod > 9) {
-                	resultado = String.fromCharCode(base_mod + 55 ) + number1;
+                	resultado = String.fromCharCode(base_mod + 55 ) + resultado;
             		} else {
                 	   resultado= base_mod + resultado;
               		  }
