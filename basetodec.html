@@ -87,8 +87,6 @@
 	<input type="button" value="Calcular" onclick="resultados()">
 
 	<div id = "resultado"></div>
-	<div id = "resultado1"></div>
-	
 </body>
 
 <script type="text/javascript">
@@ -99,12 +97,9 @@
 		var resultado = document.getElementById("resultado");
 
 		var base1 = document.getElementById("base1").value;
-		var number1 = document.getElementById("resultado").value;
-		var resultado1 = document.getElementById("resultado1");
-		
-		resultado.innerText = basetodec(number, base);
-		resultado1.innerText = dec2base(number1, base1);
-		
+		var dec = basetodec(number, base);
+
+		resultado.innerText = dec2base(dec, base1)
 	}
 
 	function basetodec(number, base){
