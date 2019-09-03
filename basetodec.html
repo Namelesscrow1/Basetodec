@@ -6,11 +6,47 @@
 </head>
 <body>
 	<p>base a convertir</p>
-	<input type="text" id="base">
+<select id="base">
+  	  <option value="1">1</option>
+  	  <option value="2">2</option>
+  	  <option value="3">3</option>
+  	  <option value="4">4</option>
+  	  <option value="5">5</option>
+  	  <option value="6">6</option>
+  	  <option value="7">7</option>
+  	  <option value="8">8</option>
+  	  <option value="9">9</option>
+  	  <option value="10">10</option>
+  	  <option value="11">11</option>
+  	  <option value="12">12</option>
+  	  <option value="13">13</option>
+  	  <option value="14">14</option>
+  	  <option value="15">15</option>
+  	  <option value="16">16</option>
+  	  <option value="17">17</option>
+  	  <option value="18">18</option>
+  	  <option value="19">19</option>
+  	  <option value="20">20</option>
+  	  <option value="21">21</option>
+  	  <option value="22">22</option>
+  	  <option value="23">23</option>
+  	  <option value="24">24</option>
+  	  <option value="25">25</option>
+  	  <option value="26">26</option>
+  	  <option value="27">27</option>
+  	  <option value="28">29</option>
+  	  <option value="30">30</option>
+  	  <option value="31">31</option>
+  	  <option value="32">32</option>
+  	  <option value="33">33</option>
+  	  <option value="34">34</option>
+  	  <option value="35">35</option>
+  	  <option value="36">36</option>
+	</select>
 	<p>number</p>
 	<input type="text" id="number">
 	<p>base de number</p>
-	<select>
+	<select id="base1">
   	  <option value="1">1</option>
   	  <option value="2">2</option>
   	  <option value="3">3</option>
@@ -51,16 +87,23 @@
 	<input type="button" value="Calcular" onclick="resultados()">
 
 	<div id = "resultado"></div>
+	<div id = "resultado1"></div>
 	
 </body>
 
 <script type="text/javascript">
 
 	function resultados(){
-		var base = document.getElementById("base");
-		var number = document.getElementById("number");
+		var base = document.getElementById("base").value;
+		var number = document.getElementById("number").value;
 		var resultado = document.getElementById("resultado");
+
+		var base1 = document.getElementById("base1").value;
+		var number1 = document.getElementById("resultado").value;
+		var resultado1 = document.getElementById("resultado1");
+		
 		resultado.innerText = basetodec(number, base);
+		resultado1.innerText = dec2base(number1, base1);
 		
 	}
 
@@ -84,7 +127,21 @@
 
                 return dec;
 
-   			}	
+   			}
+
+   			    function dec2base(number1, base1) {
+      			  var resultado = "";
+        		  while(number1 > 0) {
+            		var base_mod = number1%base1;
+            		if (base_mod > 9) {
+                	resultado = String.fromCharCode(base_mod + 55 ) + number1;
+            		} else {
+                	   resultado= base_mod + resultado;
+              		  }
+            			number1 = Math.floor(number1/base1);
+        		  }
+        				return resultado;
+    			}	
     				
 </script>
 </html>
